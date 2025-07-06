@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>LYGreen</title>
+        <link>https://lygreen.github.io/blog-archive/en/</link>
+        <description>Recent content on LYGreen</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>LYGreen</copyright><atom:link href="https://lygreen.github.io/blog-archive/en/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://lygreen.github.io/blog-archive/en/about/</link>
+        <pubDate>Thu, 02 Jan 2025 23:45:19 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/en/about/</guid>
+        <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;m a sh*t programmer, that&amp;rsquo;s all&lt;/p&gt;
+&lt;h3 id=&#34;thanks&#34;&gt;Thanks
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;%22https://gohugo.io/%22&#34; &gt;Hugo&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;%22https://github.com/CaiJimmy/hugo-theme-stack%22&#34; &gt;Hugo-Theme-Stack&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;%22https://pages.github.com/%22&#34; &gt;Github Pages&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://lygreen.github.io/blog-archive/en/archives/</link>
+        <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/en/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Links</title>
+        <link>https://lygreen.github.io/blog-archive/en/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/en/links/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

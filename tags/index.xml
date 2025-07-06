@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on LYGreen</title>
+        <link>https://lygreen.github.io/blog-archive/tags/</link>
+        <description>Recent content in Tags on LYGreen</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>LYGreen</copyright>
+        <lastBuildDate>Sun, 06 Jul 2025 17:21:34 +0800</lastBuildDate><atom:link href="https://lygreen.github.io/blog-archive/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>OpenWrt</title>
+        <link>https://lygreen.github.io/blog-archive/tags/openwrt/</link>
+        <pubDate>Tue, 14 Jan 2025 15:49:34 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/tags/openwrt/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hugo</title>
+        <link>https://lygreen.github.io/blog-archive/tags/hugo/</link>
+        <pubDate>Sat, 04 Jan 2025 15:12:12 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/tags/hugo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>视频推荐</title>
+        <link>https://lygreen.github.io/blog-archive/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E8%8D%90/</link>
+        <pubDate>Sat, 04 Jan 2025 09:42:24 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/tags/%E8%A7%86%E9%A2%91%E6%8E%A8%E8%8D%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>书籍推荐</title>
+        <link>https://lygreen.github.io/blog-archive/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</link>
+        <pubDate>Sat, 04 Jan 2025 09:42:24 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/tags/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>网页推荐</title>
+        <link>https://lygreen.github.io/blog-archive/tags/%E7%BD%91%E9%A1%B5%E6%8E%A8%E8%8D%90/</link>
+        <pubDate>Sat, 04 Jan 2025 09:42:24 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/tags/%E7%BD%91%E9%A1%B5%E6%8E%A8%E8%8D%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Arch Linux</title>
+        <link>https://lygreen.github.io/blog-archive/tags/arch-linux/</link>
+        <pubDate>Sat, 26 Oct 2024 00:43:41 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/tags/arch-linux/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

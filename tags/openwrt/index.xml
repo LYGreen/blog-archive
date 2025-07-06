@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>OpenWrt on LYGreen</title>
+        <link>https://lygreen.github.io/blog-archive/tags/openwrt/</link>
+        <description>Recent content in OpenWrt on LYGreen</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>LYGreen</copyright>
+        <lastBuildDate>Sun, 06 Jul 2025 17:21:34 +0800</lastBuildDate><atom:link href="https://lygreen.github.io/blog-archive/tags/openwrt/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>OpenWrt 配置 WiFi 中继</title>
+        <link>https://lygreen.github.io/blog-archive/p/openwrt-%E9%85%8D%E7%BD%AE-wifi-%E4%B8%AD%E7%BB%A7/</link>
+        <pubDate>Tue, 14 Jan 2025 15:49:34 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/p/openwrt-%E9%85%8D%E7%BD%AE-wifi-%E4%B8%AD%E7%BB%A7/</guid>
+        <description>&lt;h2 id=&#34;openwrt-配置-wifi-中继&#34;&gt;OpenWrt 配置 WiFi 中继
+&lt;/h2&gt;&lt;h3 id=&#34;连接需要中继的-wifi&#34;&gt;连接需要中继的 wifi
+&lt;/h3&gt;&lt;p&gt;去到&lt;code&gt;Network -&amp;gt; Wireless&lt;/code&gt;，点击 &lt;code&gt;Scan&lt;/code&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img0.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;选择需要中继的 WiFi 网络，点击加入网络
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;WPA passphrase&lt;/code&gt;意思是要输入 wifi 密码&lt;br&gt;
+&lt;code&gt;Lock to BSSID&lt;/code&gt;表示这个网络与 MAC 地址绑定，不用担心 wifi 重名问题&lt;br&gt;
+完成之后点击&lt;code&gt;Submit&lt;/code&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这里直接默认即可，点击&lt;code&gt;Save&lt;/code&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击&lt;code&gt;Save &amp;amp; Apply&lt;/code&gt;，此时你的路由器已经连上了要中继的 wifi，并且电脑也可以上网了
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;开启当前路由器的-wifi&#34;&gt;开启当前路由器的 wifi
+&lt;/h3&gt;&lt;p&gt;点击&lt;code&gt;add&lt;/code&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;配置模式为&lt;code&gt;Access Point&lt;/code&gt;，即网络接入点，或者是说当前路由器的 wifi，怎么样叫它都可以&lt;br&gt;
+&lt;code&gt;ESSID&lt;/code&gt;也就是 wifi 名字&lt;br&gt;
+&lt;code&gt;Network&lt;/code&gt;表示当前配置属于哪个网络，选择 lan 网络，意思类似于，一台设备连上了这个 wifi 之后就相当于这个设备接到了这个路由器的 lan 口&lt;br&gt;
+点击&lt;code&gt;Save&lt;/code&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;接着来到&lt;code&gt;Wireless Security&lt;/code&gt;，加密方式可以选择这个，设置一下 wifi 密码，点击&lt;code&gt;Save&lt;/code&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击&lt;code&gt;Save &amp;amp; Apply&lt;/code&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;此时可以看到当前路由器的 wifi&lt;br&gt;
+&lt;img src=&#34;https://lygreen.github.io/blog-archive/img-openwrt-wifi-setting/img9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="给一台没有网的设备安装 Arch Linux">
+
+
+<link rel="icon" href="/blog-archive/icon/lygreen_icon.ico" type="image/x-icon" /><title>Arch Linux 离线安装教程</title>
+
+<link rel='canonical' href='https://lygreen.github.io/blog-archive/p/arch-linux-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/'>
+
+<link rel="stylesheet" href="/blog-archive/scss/style.min.b99deba827536503b7f6e573cd59f8d8c412e58150d035ec1bacbae73fbc2d75.css"><meta property='og:title' content="Arch Linux 离线安装教程">
+<meta property='og:description' content="给一台没有网的设备安装 Arch Linux">
+<meta property='og:url' content='https://lygreen.github.io/blog-archive/p/arch-linux-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/'>
+<meta property='og:site_name' content='LYGreen'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Arch Linux' /><meta property='article:published_time' content='2024-10-26T00:43:41&#43;08:00'/><meta property='article:modified_time' content='2025-07-06T17:21:34&#43;08:00'/>
+<meta name="twitter:title" content="Arch Linux 离线安装教程">
+<meta name="twitter:description" content="给一台没有网的设备安装 Arch Linux">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/blog-archive/">
+                
+                    <img src="/blog-archive/img/lygreen_avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/blog-archive">LYGreen</a></h1>
+            <h2 class="site-description">我不管，如果你讨厌我，我会拿着板凳砸向你的头</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/LYGreen'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/blog-archive/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog-archive/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>存档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog-archive/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/blog-archive/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://lygreen.github.io/blog-archive/" selected>中文</option>
+                                
+                                    <option value="https://lygreen.github.io/blog-archive/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#需要准备">需要准备：</a></li>
+    <li><a href="#下载软件包--此处使用虚拟机的-live-环境-">下载软件包 ( 此处使用虚拟机的 Live 环境 )：</a></li>
+    <li><a href="#安装软件包--此处新建了一个-arch-linux-虚拟机-">安装软件包 ( 此处新建了一个 Arch Linux 虚拟机 )</a>
+      <ol>
+        <li><a href="#安装系统">安装系统</a></li>
+        <li><a href="#设置时区">设置时区</a></li>
+        <li><a href="#本地化">本地化</a></li>
+        <li><a href="#主机名">主机名</a></li>
+        <li><a href="#设置-root-密码">设置 root 密码</a></li>
+        <li><a href="#安装-grub--引导加载程序-">安装 grub ( 引导加载程序 )</a></li>
+        <li><a href="#退出-chroot-并重启系统">退出 chroot 并重启系统</a></li>
+      </ol>
+    </li>
+    <li><a href="#完成">完成</a></li>
+    <li><a href="#解决无网络问题">解决无网络问题</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/blog-archive/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/blog-archive/p/arch-linux-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Arch Linux 离线安装教程</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            给一台没有网的设备安装 Arch Linux
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 26, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class = "article-time--lastmod">
+                    <div>
+                        
+                        最后更新于
+                    </div>
+                    <div>
+                        2025/7/6
+                    </div>
+                </time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="虚拟机离线安装-arch-linux">虚拟机离线安装 Arch Linux
+</h1><hr>
+<h2 id="需要准备">需要准备：
+</h2><ul>
+<li>
+<p>可联网并使用 pacman 的 Arch Linux ( 可以是 Live 环境 )</p>
+</li>
+<li>
+<p>虚拟机 ( VMware 或 VirtualBox )</p>
+</li>
+</ul>
+<hr>
+<h2 id="下载软件包--此处使用虚拟机的-live-环境-">下载软件包 ( 此处使用虚拟机的 Live 环境 )：
+</h2><p>先做好磁盘相关工作 ( lsblk 可以检查磁盘状态 )：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsblk
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog-archive/img-arch-linux-offline-install/img1.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>接下来对磁盘进行操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fdisk /dev/sda
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出现 Command (m for help): 之后输入 n 创建分区</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Command (m for help):n
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后一直按回车直到再次出现 Command (m for help): 之后输入 w 进行写入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Command (m for help):w
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时输入 lsblk 会出现一个新的分区</p>
+<p><img src="/blog-archive/img-arch-linux-offline-install/img2.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>接下来将 sda1 分区进行格式化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkfs.ext4 /dev/sda1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将该分区挂载到目录 /mnt</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mount /dev/sda1 /mnt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进入到 /mnt 目录，并在该目录创建文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /mnt
+</span></span><span class="line"><span class="cl">mkdir -p /mnt/var/lib/pacman/sync
+</span></span><span class="line"><span class="cl">mkdir -p /mnt/var/cache/pacman/pkg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载存储库 ( 由于该目录挂载的是 sda1 分区，所以下载之后会保存在磁盘当中 )</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman --root /mnt --cachedir /mnt/var/lib/pacman/pkg -Sy
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载软件包，此处为下载 base, linux, linux-firmware, grub, vim, dhcpcd 包，如果有需要其他的包可以在后面进行添加 ( Live 镜像里的包可以在此处看到 <a class="link" href="https://geo.mirror.pkgbuild.com/iso/latest/arch/pkglist.x86_64.txt"  target="_blank" rel="noopener"
+    >pkglist.x86_64.txt</a> )</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman --root /mnt --cachedir /mnt/var/cache/pacman/pkg -Sw base linux linux-firmware grub vim dhcpcd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载好之后进行压缩</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -czvf packages.tar.gz var
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来可以用 pscp 等工具将该压缩包进行复制到当前计算机 ( 此处以 pscp 为例，将文件复制到 pscp 根目录 )</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pscp -r root@192.168.x.x:/mnt/packages.tar.gz .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>若在连接的过程中提示需要密码，则可以先在 Arch Linux 创建一个密码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">passwd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog-archive/img-arch-linux-offline-install/img3.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>该虚拟机可以作废了</p>
+<hr>
+<h2 id="安装软件包--此处新建了一个-arch-linux-虚拟机-">安装软件包 ( 此处新建了一个 Arch Linux 虚拟机 )
+</h2><h3 id="安装系统">安装系统
+</h3><p>和刚才一样，先将磁盘进行分区，格式化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fdisk /dev/sda
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>fdisk 命令( 新建分区，写入 )</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Command (m for help):n
+</span></span><span class="line"><span class="cl">Command (m for help):w
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>格式化，挂载，进入到该目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkfs.ext4 /dev/sda1
+</span></span><span class="line"><span class="cl">mount /dev/sda1 /mnt
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /mnt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后进行局域网传输 ( 或其他可行的方法 )，在当前计算机开启一个网页服务器 ( 可用 nginx, Visual Studio Code 的 Live Server 等 )，在 Arch Linux 里面根据当前计算机的 <strong>ip</strong>，<strong>端口</strong> 和 <strong>文件路径</strong> 输入命令，把当前计算机的 packages.tar.gz 文件传输到虚拟机里</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -O 192.168.x.x:xx/path/to/packages.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>解压</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -xzvf packages.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时可以输入 ls 检查当前目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog-archive/img-arch-linux-offline-install/img4.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>接下来进行安装 ( 设置 /mnt 目录为根，软件包为 /mnt/var/cache/pacman/pkg )</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman --root /mnt --cachedir /mnt/var/cache/pacman/pkg -S base linux linux-firmware grub vim dhcpcd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后一直默认，进行安装</p>
+<p><img src="/blog-archive/img-arch-linux-offline-install/img5.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><strong>此处安装过程中会遇到错误如下：</strong></p>
+<p><img src="/blog-archive/img-arch-linux-offline-install/img6.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>因为 /mnt/dev 文件夹是空的，换句话说 /mnt/dev 没有和 Live 环境里的设备 /dev 进行绑定，因此需要进行绑定 ( 挂载虚拟文件系统 )</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mount --bind /dev /mnt/dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此外，另外2个目录也需要进行绑定</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mount --bind /proc /mnt/proc
+</span></span><span class="line"><span class="cl">mount --bind /sys /mnt/sys
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再次进行安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pacman --root /mnt --cachedir /mnt/var/cache/pacman/pkg -S base linux linux-firmware grub vim dhcpcd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成之后即可进入该系统</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">arch-chroot /mnt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置时区">设置时区
+</h3><p>例如设置为上海</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></span><span class="line"><span class="cl">hwclock --systohc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="本地化">本地化
+</h3><p>使用 vim 编辑 /etc/locale.gen，取消注释所需的语言（ 如 en_US.UTF-8 ）:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/locale.gen
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后生成本地化：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">locale-gen
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置系统语言：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;LANG=en_US.UTF-8&#34;</span> &gt; /etc/locale.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="主机名">主机名
+</h3><p>设置主机名：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;myhostname&#34;</span> &gt; /etc/hostname
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用 vim 编辑 /etc/hosts ，添加：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">127.0.0.1 localhost
+</span></span><span class="line"><span class="cl">::1       localhost
+</span></span><span class="line"><span class="cl">127.0.1.1 myhostname.localdomain myhostname
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置-root-密码">设置 root 密码
+</h3><p><strong>一定要设置密码，否则之后启动系统密码怎么输都不行</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">passwd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-grub--引导加载程序-">安装 grub ( 引导加载程序 )
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grub-install --target<span class="o">=</span>i386-pc /dev/sda
+</span></span><span class="line"><span class="cl">grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="退出-chroot-并重启系统">退出 chroot 并重启系统
+</h3><p>退出 chroot：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>取消挂载 sda1：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">umount -R /mnt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重启：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">reboot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="完成">完成
+</h2><p>选择 Arch Linux 即可进入系统</p>
+<p><img src="/blog-archive/img-arch-linux-offline-install/img7.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="解决无网络问题">解决无网络问题
+</h2><p>若启动系统之后没有网络，则需要启动 dhcpcd 服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start dhcpcd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置开机自启动：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> dhcpcd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="参考">参考
+</h2><ul>
+<li><a class="link" href="https://aquarium39.moe/posts/install-arch-offline/"  target="_blank" rel="noopener"
+    >Arch 离线安装教程</a></li>
+<li><a class="link" href="https://chatgpt.com/"  target="_blank" rel="noopener"
+    >ChatGPT</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/blog-archive/tags/arch-linux/">Arch Linux</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Jul 06, 2025 17:21 CST
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+<script
+    src="https://giscus.app/client.js"
+    data-repo="LYGreen/lygreen.github.io"
+    data-repo-id="R_kgDONlSrmg"
+    data-category="Article discussions"
+    data-category-id="DIC_kwDONlSrms4Cluui"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    
+    
+    
+    
+        
+        
+        
+    
+    data-lang="zh-CN"
+
+    data-loading=""
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 LYGreen
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/blog-archive/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

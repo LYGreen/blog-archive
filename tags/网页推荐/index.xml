@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>网页推荐 on LYGreen</title>
+        <link>https://lygreen.github.io/blog-archive/tags/%E7%BD%91%E9%A1%B5%E6%8E%A8%E8%8D%90/</link>
+        <description>Recent content in 网页推荐 on LYGreen</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>LYGreen</copyright>
+        <lastBuildDate>Sun, 06 Jul 2025 17:21:34 +0800</lastBuildDate><atom:link href="https://lygreen.github.io/blog-archive/tags/%E7%BD%91%E9%A1%B5%E6%8E%A8%E8%8D%90/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>书籍推荐</title>
+        <link>https://lygreen.github.io/blog-archive/p/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</link>
+        <pubDate>Sat, 04 Jan 2025 09:42:24 +0800</pubDate>
+        
+        <guid>https://lygreen.github.io/blog-archive/p/%E4%B9%A6%E7%B1%8D%E6%8E%A8%E8%8D%90/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;根据网络、朋友还有我看过的书/视频进行推荐，反正我找书也是找网上的推荐，我甚至还找 ChatGPT 推荐，就当作是收藏了，有些书籍因为我还没开始学所以我没有推荐，大部分书名我都可以给出来，可以去谷歌上搜，部分网站的我可以贴个链接&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;cc-语言&#34;&gt;C/C++ 语言
+&lt;/h2&gt;&lt;p&gt;暂时没有因为我一开始学 C/C++ 语言是看 B 站视频的所以我基本没看过有关 C 语言的书所以我根据网络搜素到的进行推荐&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;C Primer Plus &lt;code&gt;网上推荐&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;啊哈C语言 &lt;code&gt;网上推荐&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;深入理解C指针(Understanding And Using C Pointers)&lt;/li&gt;
+&lt;li&gt;这是我好几年前学C/C++看的 &lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1zt411e7uP/?spm_id_from=333.999.0.0&amp;amp;vd_source=4fe70bc90b3c86ea53adef63b7e185c3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;视频&lt;/a&gt; ，有点老，我也不知道我当时是怎么看下去的不过没关系我现在是个废物&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;c&#34;&gt;C#
+&lt;/h2&gt;&lt;p&gt;基础：&lt;code&gt;基础语法学了C/C++之后用用就会了&lt;/code&gt;&lt;br&gt;
+深入：NET CLR via C# &lt;code&gt;这个比较难懂一般要刷好几遍&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;python&#34;&gt;Python
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;用用就会了&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;git&#34;&gt;Git
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;有不会的直接问 ChatGPT&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;markdown&#34;&gt;Markdown
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://markdown.com.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Markdown 教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;htmljavascriptcss&#34;&gt;HTML/Javascript/CSS
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;菜鸟教程 &lt;code&gt;不是书，是网页&lt;/code&gt; (&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/html/html-tutorial.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HTML&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/js/js-tutorial.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Javascript&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/htmldom/htmldom-tutorial.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HTML DOM&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/css/css-tutorial.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSS&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;汇编语言&#34;&gt;汇编语言
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;汇编语言(王爽) &lt;code&gt;网上推荐&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;算法&#34;&gt;算法
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.hello-algo.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hello algo&lt;/a&gt; (&lt;a class=&#34;link&#34; href=&#34;https://github.com/krahets/hello-algo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;30天自制操作系统 &lt;code&gt;年代有点久远，跟着做可能会出现问题，如果出现问题的话上谷歌搜&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;操作系统真象还原&lt;/li&gt;
+&lt;li&gt;Orange&amp;rsquo;S 一个操作系统的实现&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://littleosbook.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;The little book about OS development&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://pages.cs.wisc.edu/~remzi/OSTEP/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Operating Systems: Three Easy Pieces&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://wiki.osdev.org/Expanded_Main_Page&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OSDev&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;数据库&#34;&gt;数据库
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;暂时没学&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;机器学习&#34;&gt;机器学习
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;暂时没学&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;计算机网络&#34;&gt;计算机网络
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;没有&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数学&#34;&gt;数学
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;普林斯顿微积分读本&lt;/li&gt;
+&lt;li&gt;程序员的数学3：线性代数&lt;/li&gt;
+&lt;li&gt;微积分之屠龙宝刀&lt;/li&gt;
+&lt;li&gt;微积分之倚天宝剑&lt;/li&gt;
+&lt;li&gt;3D数学基础：图形和游戏开发&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;物理&#34;&gt;物理
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;耶鲁大学开放课程：基础物理 力学、相对论和热力学 &lt;code&gt;朋友推荐&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;耶鲁大学开放课程 基础物理2 电磁学 光学和量子力学 &lt;code&gt;朋友推荐&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;模拟电路&#34;&gt;模拟电路
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;没有，我上大学才学&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数字电路&#34;&gt;数字电路
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;没有，也是大学才学&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;想说的话&#34;&gt;想说的话
+&lt;/h2&gt;&lt;p&gt;我目前学得就这么多而且学得也不深不得不说我是真的废物中的废物&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他
+&lt;/h2&gt;&lt;p&gt;不要嫌我不打标点符号因为我已经疯了我不想打&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
