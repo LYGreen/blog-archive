@@ -51,7 +51,7 @@ frontmatter:
 
 params:
     # 网站图标，绝对路径以 '/' 开头，例如 /path/image.png。 path/image.png 和 ./path/image.png 都是相对路径
-    websiteIcon: /icon/lygreen_icon.ico
+    websiteIcon: /blog-archive/icon/lygreen_icon.ico
 
     mainSections:
         - post
@@ -74,7 +74,7 @@ params:
         avatar:
             enabled: true
             local: false
-            src: /img/lygreen_avatar.png
+            src: /blog-archive/img/lygreen_avatar.png
 
     article:
         math: false
